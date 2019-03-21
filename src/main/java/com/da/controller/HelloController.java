@@ -32,6 +32,11 @@ public  class HelloController {
         return "/login";
     }
 
+    @RequestMapping("noAuth")
+    public String noAuth(){
+        return "/noAuth";
+    }
+
 
     @RequestMapping("add")
     public String add(){
