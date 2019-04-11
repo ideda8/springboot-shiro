@@ -32,6 +32,7 @@ public class UserRealm extends AuthorizingRealm {
 
         //从数据库查询当前登录用户的授权字符串
         Subject subject = SecurityUtils.getSubject();
+
         User user = (User) subject.getPrincipal();
 
         User u = userService.findById(user.getId());
@@ -59,7 +60,7 @@ public class UserRealm extends AuthorizingRealm {
 //        String name = "dada";
 //        String password = "123456";
 
-//        //判断用户名密码
+        //判断用户名密码
         UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
 
 //        if(!token.getUsername().equals(name)){
@@ -67,11 +68,11 @@ public class UserRealm extends AuthorizingRealm {
 //            return null;//shiro底层会抛出UnknownAccountException异常
 //        }
 //
-//        //判断密码 AuthenticationInfo的子类SimpleAuthenticationInfo
-//        //SimpleAuthenticationInfo参数:
-//        // principal 需要返回方法的数据 会传到doGetAuthorizationInfo的principal中
-//        // credentials 数据库的密码 Shiro自动判断
-//        // realmName Shiro的名字
+        //判断密码 AuthenticationInfo的子类SimpleAuthenticationInfo
+        //SimpleAuthenticationInfo参数:
+        // principal 需要返回方法的数据 会传到doGetAuthorizationInfo的principal中
+        // credentials 数据库的密码 Shiro自动判断
+        // realmName Shiro的名字
 //        return new SimpleAuthenticationInfo("",password,"");
 
         User user = userService.findByName(token.getUsername());
