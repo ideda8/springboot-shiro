@@ -45,10 +45,9 @@ public class ShiroConfig {
         filterMap.put("/add", "perms[user:add]");   //对add添加权限过滤
         filterMap.put("/update", "perms[user:update]");   //对updatre添加权限过滤
 
-
         filterMap.put("/*", "authc");
 
-        //修改调整的登录页面
+        //跳转的登录页面
         shiroFilterFactoryBean.setLoginUrl("/goLogin");
         //未授权提示页面
         shiroFilterFactoryBean.setUnauthorizedUrl("/noAuth");
