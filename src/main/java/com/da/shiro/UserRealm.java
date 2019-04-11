@@ -56,7 +56,6 @@ public class UserRealm extends AuthorizingRealm {
         System.out.println("执行认证逻辑");
 
         //在这里判断用户名密码
-
 //        String name = "dada";
 //        String password = "123456";
 
